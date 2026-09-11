@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0d10;
+  --color-surface: #17191d;
+  --color-text: #f3f1ea;
+  --color-accent: #ff5a2e;
+  --color-divider: color-mix(in srgb, var(--color-text) 14%, transparent);
+
+  --color-accent-100: #ffede6;
+  --color-accent-200: #ffd1be;
+  --color-accent-300: #ffa47d;
+  --color-accent-400: #ff7a47;
+  --color-accent-500: #ff5a2e;
+  --color-accent-600: #e8430f;
+  --color-accent-700: #c13508;
+  --color-accent-800: #8c2a0c;
+  --color-accent-900: #5c1f0d;
+
+  --color-accent-blue: #3b5bff;
+  --color-accent-blue-300: #9aacff;
+  --color-accent-blue-600: #2c46d6;
+
+  --color-neutral-100: #f5f3ee;
+  --color-neutral-200: #e4e1d8;
+  --color-neutral-300: #c7c3b7;
+  --color-neutral-400: #9c978a;
+  --color-neutral-500: #726e63;
+  --color-neutral-600: #524f47;
+  --color-neutral-700: #38362f;
+  --color-neutral-800: #232220;
+  --color-neutral-900: #161513;
+
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  text-wrap: pretty;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+a:hover {
+  color: var(--color-accent-300);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.6rem 1rem;
+  font-size: 13px;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* A faint, fixed grain layer - screen-blended so it reads as light speckle
+   on the dark surfaces instead of flattening into pure, sterile color. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    display: none;
+  }
+}
+
+/* Blueprint grid - the hero's atmosphere, tied to the brand's engineering
+   subject matter rather than a decorative stock gradient. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-text) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-text) 7%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* A soft, tinted spotlight - the one quiet nod to the brand's two colors
+   (red gear mark, blue wordmark), kept to a whisper so it reads as
+   atmosphere, not a second accent competing with the actual UI. */
+.hero-glow {
+  background:
+    radial-gradient(circle at 82% 12%, color-mix(in srgb, var(--color-accent) 16%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 60% 30%, color-mix(in srgb, var(--color-accent-blue) 9%, transparent) 0%, transparent 55%);
+  filter: blur(40px);
+}
+
+@keyframes gear-turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.gear-turn {
+  animation: gear-turn 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gear-turn {
+    animation: none;
+  }
+}
