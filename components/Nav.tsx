@@ -8,6 +8,7 @@ import mark from "@/public/gearon-mark.png";
 
 const links = [
   { href: "/#services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/work", label: "Work" },
   { href: "/#process", label: "How we work" },
 ];
@@ -27,7 +28,8 @@ export default function Nav() {
         </Link>
         <div className="flex flex-wrap items-center gap-[22px]">
           {links.map((link) => {
-            const current = link.href === "/work" && pathname === "/work";
+            const current =
+              (link.href === "/work" || link.href === "/solutions") && pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}

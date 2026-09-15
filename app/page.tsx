@@ -7,6 +7,7 @@ import ProcessSteps from "@/components/sections/ProcessSteps";
 import Offers from "@/components/sections/Offers";
 import TeamSection from "@/components/sections/TeamSection";
 import TrustSignals from "@/components/sections/TrustSignals";
+import FAQ from "@/components/sections/FAQ";
 import BookCall from "@/components/sections/BookCall";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Offers />
       <TeamSection />
       <TrustSignals />
+      <FAQ />
       <BookCall />
     </div>
   );

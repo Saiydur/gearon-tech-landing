@@ -26,7 +26,9 @@ export default function Applications() {
                 {String(i + 1).padStart(2, "0")}
               </div>
               <h3 className="mb-2.5 font-heading text-lg leading-[1.2] font-bold tracking-[-0.015em]">
-                {app.title}
+                <Link href={`/solutions/${app.slug}`} className="no-underline hover:underline">
+                  {app.title}
+                </Link>
               </h3>
               <p className="text-[14.5px] leading-[1.6] text-text/76">{app.copy}</p>
               {app.relatedSlugs && app.relatedSlugs.length > 0 && (

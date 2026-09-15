@@ -4,6 +4,7 @@ import mark from "@/public/gearon-mark.png";
 
 const links = [
   { href: "/#services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/work", label: "Work" },
   { href: "/#process", label: "How we work" },
   { href: "/#book", label: "Contact" },

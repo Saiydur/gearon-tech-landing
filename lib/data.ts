@@ -198,69 +198,110 @@ export const SERVICES = [
 ];
 
 export type Application = {
+  slug: string;
   title: string;
   copy: string;
+  intro: string;
   relatedSlugs?: string[];
 };
 
 export const APPLICATIONS: Application[] = [
   {
+    slug: "custom-ecommerce-platform",
     title: "Custom Ecommerce Platform",
     copy: "Storefronts, checkout and catalogue built around how you actually sell, not a template.",
+    intro:
+      "A custom ecommerce platform is a storefront, checkout and catalogue system built around your actual sales process instead of a page builder's defaults. For sellers who've outgrown a templated store - custom pricing logic, catalogue structure or checkout rules a generic platform can't express - we build the commerce layer as software.",
   },
   {
+    slug: "pos-inventory-management",
     title: "POS & Inventory Management",
     copy: "Till, stock and multi-branch inventory synced in real time, on the floor and in the back office.",
+    intro:
+      "A POS and inventory management system connects the till to real-time stock across every branch, so a sale in one location updates inventory everywhere at once. We build this for multi-branch operators who need parts, stock and invoicing in one system instead of reconciling spreadsheets at month-end.",
     relatedSlugs: ["automotive-erp"],
   },
   {
+    slug: "business-automation-software",
     title: "Business Automation Software",
     copy: "The manual steps between your systems, replaced with workflows that run themselves.",
+    intro:
+      "Business automation software replaces the manual steps between the systems you already run - copying data between tools, chasing approvals, re-entering the same record twice - with workflows that execute themselves. We build this into operations where manual handling breaks down: work orders, crews, field reporting.",
     relatedSlugs: ["property-preservation-maintenance"],
   },
   {
+    slug: "hrm-business-management",
     title: "HRM & Business Management",
     copy: "Payroll, attendance, leave and workforce operations in one system your HR team actually uses.",
+    intro:
+      "An HRM system centralises payroll, attendance, leave and workforce records into one system of record instead of scattered spreadsheets and forms. We build these for growing teams where HR still runs on manual tracking and the gaps are starting to cost real time.",
   },
   {
+    slug: "modern-lms",
     title: "Modern LMS",
     copy: "Course delivery, enrolment and progress tracking built to hold thousands of concurrent learners.",
+    intro:
+      "A modern LMS delivers courses, tracks enrolment and manages learner progress at a scale a templated platform can't hold. We run the full technical estate behind Bondi Pathshala's 500,000+ users, from content delivery to enrolment - live infrastructure, not a theoretical capability.",
     relatedSlugs: ["bondi-pathshala", "Topperon"],
   },
   {
+    slug: "automated-examination-system",
     title: "Automated Examination System",
     copy: "Question banks, timed delivery and proctoring for institutions running exams online.",
+    intro:
+      "An automated examination system delivers question banks, timed exams and proctoring for institutions moving testing online. Testiphy, our live exam platform, is the proof: built, run and iterated on for the institutions using it to test students at scale.",
     relatedSlugs: ["testiphy"],
   },
   {
+    slug: "ai-powered-assessment",
     title: "AI-Powered Assessment",
     copy: "Grading and evaluation that scales past what a human marking team can carry alone.",
+    intro:
+      "AI-powered assessment applies automated grading and evaluation to work that would otherwise need a human marking team - scoring and feedback at a volume manual grading can't match. We build this into examination and learning platforms where grading is the bottleneck.",
     relatedSlugs: ["testiphy"],
   },
   {
+    slug: "ai-chatbot",
     title: "AI Chatbot",
     copy: "A support and sales agent trained on your product, not a generic script.",
+    intro:
+      "An AI chatbot handles support and sales conversations using your product's actual documentation and data, not a generic scripted flow. We build these to sit inside the systems you already run, trained on your content rather than answering from a blank slate.",
   },
   {
+    slug: "automated-customer-support",
     title: "Automated Customer Support",
     copy: "Ticketing, routing and responses that resolve the repeat questions before a human has to.",
+    intro:
+      "Automated customer support routes, triages and resolves the repeat questions in your ticket queue before a human has to touch them, freeing your support team for the cases that actually need a person. We build this into the support stack, not as a bolt-on widget.",
   },
   {
+    slug: "whatsapp-marketing-automation",
     title: "WhatsApp Marketing Automation",
     copy: "Campaigns, broadcasts and lead follow-up run where your customers already are.",
+    intro:
+      "WhatsApp marketing automation runs campaigns, broadcasts and lead follow-up on the channel your customers already use daily, rather than email they may not open. This matters most in markets like Bangladesh and South Asia, where WhatsApp is the default channel for business communication.",
   },
   {
+    slug: "smart-reporting",
     title: "Smart Reporting",
     copy: "Dashboards that turn operational data into the number your management meeting actually needs.",
+    intro:
+      "Smart reporting turns operational data scattered across your systems into the specific number your management meeting needs, instead of a dashboard nobody opens. We built this into Property Preservation & Maintenance's client reporting, where operators needed a real answer, not a chart.",
     relatedSlugs: ["property-preservation-maintenance"],
   },
   {
+    slug: "intelligent-business-assistance",
     title: "Intelligent Business Assistance",
     copy: "AI wired into daily operations - decisions, drafting and lookups, not a chatbot bolted on the side.",
+    intro:
+      "Intelligent business assistance wires AI into daily operations - decisions, drafting, lookups - directly inside the tools your team already uses, rather than as a separate chatbot they have to remember to open.",
   },
   {
+    slug: "modern-erp-solutions",
     title: "Modern ERP Solutions",
     copy: "Finance, operations and inventory unified for enterprises that outgrew spreadsheets years ago.",
+    intro:
+      "A modern ERP unifies finance, operations and inventory into one system for a business that has outgrown spreadsheets. We've built and run ERPs for a multi-brand car dealer group and a construction firm managing property, projects and tenancy - live systems, not a demo.",
     relatedSlugs: ["automotive-erp", "real-estate-management"],
   },
 ];
@@ -297,6 +338,44 @@ export const OFFERS = [
     title: "Product rescue",
     copy: "A stalled or half-built product audited, stabilised and moved back into weekly delivery.",
     terms: "Audit first, then build",
+  },
+];
+
+export const FAQS = [
+  {
+    question: "How much does a custom software project cost?",
+    answer:
+      "It depends on scope, which is exactly what the two-week discovery sprint is for - a fixed-price, fixed-length engagement that ends with requirements, architecture and a costed plan you can take anywhere, including elsewhere.",
+  },
+  {
+    question: "How long does a discovery sprint take?",
+    answer:
+      "Two weeks, fixed length. You leave with scope, architecture, risks and a number you can budget against - before committing to the build.",
+  },
+  {
+    question: "Do you only take greenfield builds, or can you take over an existing codebase?",
+    answer:
+      "Both. Product rescue exists specifically for a stalled or half-built product - we audit it first, then move it back into weekly delivery.",
+  },
+  {
+    question: "What does a dedicated development team look like?",
+    answer:
+      "Named engineers, QA and DevOps working only on your product, in your standups and your repo, billed monthly and scaled up or down as scope moves - not a rotating pool of contractors.",
+  },
+  {
+    question: "What's your tech stack?",
+    answer:
+      "Mainly Next.js and NestJS on the web and service layer, plus ASP.NET Core, React Native, PostgreSQL, MongoDB and Redis depending on the system. The exact stack is listed on every case study on the work page.",
+  },
+  {
+    question: "Where is the team based?",
+    answer:
+      "A twelve-person hybrid team out of Dhaka, Bangladesh, working across BD and overseas time zones - small enough that you know who writes your code, senior enough that you don't have to check.",
+  },
+  {
+    question: "How do I start?",
+    answer:
+      "Book a 30-minute call. No deck, no discovery fee - bring the messy version, a spreadsheet, a stalled repo, a system that buckles at month-end, and you'll leave with scope, architecture and a number.",
   },
 ];
 

@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import Reveal from "@/components/Reveal";
 import { PROJECTS } from "@/lib/data";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({ slug: project.slug }));
@@ -34,8 +34,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
   const more = PROJECTS.filter((p) => p.slug !== project.slug && p.sector === project.sector).slice(0, 2);
 
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Work", path: "/work" },
+    { name: project.name, path: `/work/${project.slug}` },
+  ]);
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <section className="border-b-2 border-divider">
         <Reveal className="mx-auto max-w-[1560px] px-5 pt-11 pb-8 sm:px-8 sm:pt-16 sm:pb-10 lg:px-16 lg:pt-19 lg:pb-12">
           <Link href="/work" className="mb-6 inline-block font-mono text-[13px] text-accent-300 no-underline">
