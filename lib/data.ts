@@ -126,8 +126,8 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
-    slug: "topperom",
-    name: "Topperom",
+    slug: "Topperon",
+    name: "Topperon",
     client: "topperon.com",
     sector: "Education",
     service: "SaaS platform",
@@ -225,7 +225,7 @@ export const APPLICATIONS: Application[] = [
   {
     title: "Modern LMS",
     copy: "Course delivery, enrolment and progress tracking built to hold thousands of concurrent learners.",
-    relatedSlugs: ["bondi-pathshala", "topperom"],
+    relatedSlugs: ["bondi-pathshala", "Topperon"],
   },
   {
     title: "Automated Examination System",
