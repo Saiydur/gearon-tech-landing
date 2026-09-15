@@ -28,7 +28,7 @@ export default function SelectedWork() {
           {homeProjects.map((project) => (
             <Link
               key={project.name}
-              href="/work"
+              href={`/work/${project.slug}`}
               className="group -mx-3 flex flex-wrap items-baseline gap-x-7 gap-y-4 border-b border-divider px-3 py-5.5 no-underline transition-colors hover:bg-surface/70"
             >
               <div className="min-w-0 flex-[2_1_260px]">

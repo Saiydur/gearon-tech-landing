@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import Reveal from "@/components/Reveal";
@@ -19,7 +20,7 @@ function FilterRow({
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2.5">
-      <span className="flex-[0_0_72px] font-mono text-[13px] text-text/60">{label}</span>
+      <span className="flex-[0_0_72px] font-mono text-[13px] text-text/68">{label}</span>
       {["All", ...options].map((option) => {
         const on = active === option;
         return (
@@ -112,7 +113,14 @@ export default function WorkFilters() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex flex-col gap-4 rounded-lg border border-divider bg-bg px-7 py-7.5 transition-transform duration-300 hover:-translate-y-1">
+    <Link
+      href={`/work/${project.slug}`}
+      className="group relative flex flex-col gap-4 overflow-hidden rounded-lg border border-divider bg-bg px-7 py-7.5 no-underline transition-colors duration-300 hover:border-accent-blue/55"
+    >
+      <span
+        aria-hidden="true"
+        className="absolute inset-y-0 left-0 w-0 bg-accent-blue transition-[width] duration-300 group-hover:w-1"
+      />
       <div className="flex items-baseline justify-between gap-3 font-mono text-[13px]">
         <span className="text-accent-300">{project.sector}</span>
         <span className="text-text/55">{project.status}</span>
@@ -122,7 +130,9 @@ function ProjectCard({ project }: { project: Project }) {
       </h2>
       <div className="text-[13px] leading-[1.4] text-text/62">{project.client}</div>
       <div className="flex items-baseline gap-3 border-t-2 border-b border-divider py-4">
-        <span className="font-heading text-[30px] leading-none font-bold text-accent">{project.metric}</span>
+        <span className="origin-left font-heading text-[30px] leading-none font-bold text-accent transition-transform duration-300 group-hover:scale-110">
+          {project.metric}
+        </span>
         <span className="text-[13px] leading-[1.4] text-text/70">{project.metricLabel}</span>
       </div>
       <p className="text-[14.5px] leading-[1.65] text-text/80">{project.summary}</p>
@@ -132,6 +142,6 @@ function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
       <div className="text-xs leading-[1.5] text-text/55">{project.arch}</div>
-    </article>
+    </Link>
   );
 }

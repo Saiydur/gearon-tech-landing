@@ -1,4 +1,12 @@
+export const SITE_URL = "https://tech.gearon.ai";
+
+// Swap in the real Calendly/Cal.com link via NEXT_PUBLIC_BOOKING_URL when it's ready -
+// no code change needed. Falls back to a working mailto so the CTA is never dead.
+export const BOOKING_URL =
+  process.env.NEXT_PUBLIC_BOOKING_URL || "mailto:hello@gearon.ai?subject=Discovery%20call";
+
 export type Project = {
+  slug: string;
   name: string;
   client: string;
   sector: string;
@@ -14,6 +22,7 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "gearon-ai",
     name: "GearON.ai",
     client: "GearON Group - flagship SaaS product",
     sector: "SaaS",
@@ -28,6 +37,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "automotive-erp",
     name: "Automotive ERP",
     client: "Multi-brand car dealer group",
     sector: "Automotive",
@@ -42,6 +52,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "property-preservation-maintenance",
     name: "Property Preservation & Maintenance",
     client: "US field-services operators",
     sector: "Field services",
@@ -56,6 +67,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "real-estate-management",
     name: "Real Estate Management",
     client: "Boshomoti Construction Ltd",
     sector: "Real estate",
@@ -70,6 +82,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "connects-bd",
     name: "Connects BD",
     client: "connectsbd.com",
     sector: "Digital services",
@@ -84,6 +97,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "ota-platform",
     name: "OTA Platform",
     client: "Confidential - travel",
     sector: "Travel",
@@ -97,6 +111,7 @@ export const PROJECTS: Project[] = [
     home: true,
   },
   {
+    slug: "bondi-pathshala",
     name: "Bondi Pathshala",
     client: "bondipathshala.education",
     sector: "Education",
@@ -107,10 +122,11 @@ export const PROJECTS: Project[] = [
     summary:
       "We run the whole Bondi Pathshala technical estate - courses, enrolment and delivery for Bangladeshi students at scale.",
     arch: "Full-stack platform ownership",
-    stack: ["Next.js", "NestJS"],
+    stack: ["Next.js", "NestJS", "PostgreSQL", "MongoDB", "Redis", "MQTT", "Datadog", "Kubernetes"],
     home: true,
   },
   {
+    slug: "topperom",
     name: "Topperom",
     client: "topperon.com",
     sector: "Education",
@@ -124,6 +140,7 @@ export const PROJECTS: Project[] = [
     home: false,
   },
   {
+    slug: "testiphy",
     name: "Testiphy",
     client: "testiphy.com",
     sector: "Education",
@@ -137,6 +154,7 @@ export const PROJECTS: Project[] = [
     home: false,
   },
   {
+    slug: "sales-marketing-crm",
     name: "Sales & Marketing CRM",
     client: "Confidential - sales & marketing",
     sector: "Sales & marketing",
@@ -176,6 +194,74 @@ export const SERVICES = [
     code: "ARCH",
     title: "Technical consulting & architecture",
     copy: "Architecture review, cloud cost control, legacy modernisation and the migration plan that gets you there without a freeze.",
+  },
+];
+
+export type Application = {
+  title: string;
+  copy: string;
+  relatedSlugs?: string[];
+};
+
+export const APPLICATIONS: Application[] = [
+  {
+    title: "Custom Ecommerce Platform",
+    copy: "Storefronts, checkout and catalogue built around how you actually sell, not a template.",
+  },
+  {
+    title: "POS & Inventory Management",
+    copy: "Till, stock and multi-branch inventory synced in real time, on the floor and in the back office.",
+    relatedSlugs: ["automotive-erp"],
+  },
+  {
+    title: "Business Automation Software",
+    copy: "The manual steps between your systems, replaced with workflows that run themselves.",
+    relatedSlugs: ["property-preservation-maintenance"],
+  },
+  {
+    title: "HRM & Business Management",
+    copy: "Payroll, attendance, leave and workforce operations in one system your HR team actually uses.",
+  },
+  {
+    title: "Modern LMS",
+    copy: "Course delivery, enrolment and progress tracking built to hold thousands of concurrent learners.",
+    relatedSlugs: ["bondi-pathshala", "topperom"],
+  },
+  {
+    title: "Automated Examination System",
+    copy: "Question banks, timed delivery and proctoring for institutions running exams online.",
+    relatedSlugs: ["testiphy"],
+  },
+  {
+    title: "AI-Powered Assessment",
+    copy: "Grading and evaluation that scales past what a human marking team can carry alone.",
+    relatedSlugs: ["testiphy"],
+  },
+  {
+    title: "AI Chatbot",
+    copy: "A support and sales agent trained on your product, not a generic script.",
+  },
+  {
+    title: "Automated Customer Support",
+    copy: "Ticketing, routing and responses that resolve the repeat questions before a human has to.",
+  },
+  {
+    title: "WhatsApp Marketing Automation",
+    copy: "Campaigns, broadcasts and lead follow-up run where your customers already are.",
+  },
+  {
+    title: "Smart Reporting",
+    copy: "Dashboards that turn operational data into the number your management meeting actually needs.",
+    relatedSlugs: ["property-preservation-maintenance"],
+  },
+  {
+    title: "Intelligent Business Assistance",
+    copy: "AI wired into daily operations - decisions, drafting and lookups, not a chatbot bolted on the side.",
+  },
+  {
+    title: "Modern ERP Solutions",
+    copy: "Finance, operations and inventory unified for enterprises that outgrew spreadsheets years ago.",
+    relatedSlugs: ["automotive-erp", "real-estate-management"],
   },
 ];
 
@@ -231,6 +317,10 @@ export const STACK_OPTIONS = [
   "ASP.NET Core",
   "React Native",
   "Supabase",
+  "Redis",
+  "MQTT",
+  "Datadog",
+  "Kubernetes",
 ];
 
 export function uniqueValues<T, K extends keyof T>(items: T[], key: K): string[] {

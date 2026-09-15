@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import TeamNetwork from "@/components/TeamNetwork";
 
 export default function TeamSection() {
   return (
@@ -16,17 +17,10 @@ export default function TeamSection() {
           </p>
         </Reveal>
         <div className="blueprint-grid relative flex min-w-0 flex-[1_1_420px] items-center justify-center overflow-hidden border-l-2 border-divider bg-surface px-8 py-14">
-          <div>
-            <Reveal stagger={0.03} className="grid grid-cols-4 gap-3">
-              {Array.from({ length: 12 }, (_, i) => (
-                <div
-                  key={i}
-                  className="h-9 w-9 rounded-md border border-divider bg-bg transition-colors duration-300 hover:border-accent hover:bg-accent/10"
-                />
-              ))}
-            </Reveal>
-            <div className="mt-5 font-mono text-[13px] text-text/60">12 builders, one team</div>
-          </div>
+          <Reveal className="flex flex-col items-center">
+            <TeamNetwork />
+            <div className="mt-4 font-mono text-[13px] text-text/60">12 builders, one team</div>
+          </Reveal>
         </div>
       </div>
     </section>

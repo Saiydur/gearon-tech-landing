@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/Reveal";
 import WorkFilters from "@/components/WorkFilters";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Work - GearON Tech",
   description:
     "Ten builds across automotive, real estate, field services, education, travel and sales tooling, plus our own group product.",
-};
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (

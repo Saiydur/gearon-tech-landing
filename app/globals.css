@@ -67,6 +67,13 @@ a:hover {
   outline-offset: 2px;
 }
 
+/* On solid-accent sections (e.g. the closing CTA) the default accent
+   focus ring disappears into its own background - swap to the dark
+   token so keyboard focus stays visible against orange. */
+.bg-accent :focus-visible {
+  outline-color: var(--color-bg);
+}
+
 section[id] {
   scroll-margin-top: 84px;
 }

@@ -15,9 +15,11 @@ export default function Offers() {
           {OFFERS.map((offer) => (
             <div
               key={offer.title}
-              className="flex min-h-[230px] flex-col gap-3.5 rounded-xl border-2 border-divider px-6 py-6.5 transition-transform duration-300 hover:-translate-y-1"
+              className="group flex min-h-[230px] flex-col gap-3.5 rounded-xl border-2 border-divider px-6 py-6.5 transition-[border-color,box-shadow] duration-300 hover:border-accent/55 hover:shadow-[0_0_34px_-14px_var(--color-accent)]"
             >
-              <div className="font-mono text-[13px] text-accent-300">{offer.tag}</div>
+              <div className="font-mono text-[13px] text-accent-300 transition-colors duration-300 group-hover:text-accent">
+                {offer.tag}
+              </div>
               <h3 className="font-heading text-[21px] leading-[1.15] font-bold tracking-[-0.015em]">
                 {offer.title}
               </h3>

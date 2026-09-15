@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Analytics from "@/components/Analytics";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { SITE_URL } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,13 +34,23 @@ const description =
   "GearON Tech builds, ships and runs the systems startups and enterprises depend on - from a two-week discovery sprint to a dedicated squad that stays long after launch.";
 
 export const metadata: Metadata = {
-  title,
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({ title, description }),
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "GearON Tech",
+  url: SITE_URL,
+  logo: `${SITE_URL}/gearon-logo.webp`,
   description,
-  openGraph: {
-    title,
-    description,
-    siteName: "GearON Tech",
-    images: ["/gearon-logo.webp"],
+  email: "hello@gearon.ai",
+  sameAs: ["https://gearon.ai"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dhaka",
+    addressCountry: "BD",
   },
 };
 
@@ -47,6 +61,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-bg font-body text-text">
+        <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <a href="#main" className="skip-link">
           Skip to content
         </a>
@@ -54,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

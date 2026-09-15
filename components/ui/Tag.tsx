@@ -7,6 +7,9 @@ import {
   SiReact,
   SiSupabase,
   SiRedis,
+  SiMqtt,
+  SiDatadog,
+  SiKubernetes,
 } from "@icons-pack/react-simple-icons";
 import type { ComponentType } from "react";
 
@@ -21,6 +24,9 @@ const STACK_ICONS: Record<string, ComponentType<IconProps>> = {
   "React Native": SiReact,
   Supabase: SiSupabase,
   Redis: SiRedis,
+  MQTT: SiMqtt,
+  Datadog: SiDatadog,
+  Kubernetes: SiKubernetes,
 };
 
 export default function Tag({ children }: { children: string }) {
