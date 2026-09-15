@@ -29,6 +29,14 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      <div className="mx-auto mt-6 flex max-w-[1560px] flex-wrap gap-5 border-t border-divider pt-6 text-xs text-text/55">
+        <Link href="/privacy" className="text-text/55 no-underline hover:text-text">
+          Privacy Policy
+        </Link>
+        <Link href="/terms" className="text-text/55 no-underline hover:text-text">
+          Terms of Service
+        </Link>
+      </div>
     </footer>
   );
 }
