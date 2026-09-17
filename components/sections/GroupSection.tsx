@@ -7,14 +7,14 @@ export default function GroupSection() {
     <section className="border-b-2 border-divider bg-surface">
       <div className="mx-auto flex max-w-[1560px] flex-wrap">
         <Reveal className="min-w-0 flex-[1_1_400px] px-5 py-11 sm:px-8 sm:py-14 lg:px-16 lg:py-18">
-          <div className="mb-5 font-mono text-[13px] text-accent-300">part of GearON Group</div>
+          <div className="mb-5 font-mono text-[13px] text-accent-300">my own product</div>
           <h2 className="mb-4.5 max-w-[20ch] font-heading text-[26px] leading-[1.1] font-bold tracking-[-0.02em] sm:text-3xl lg:text-[38px]">
-            We do not only build for other people.
+            I do not only build for other people.
           </h2>
           <p className="mb-6.5 max-w-[52ch] text-base leading-[1.65] text-text/80">
-            GearON.ai is the group&apos;s flagship SaaS product and GearON Tech&apos;s own engineering is behind it
-            - a microservice platform on Next.js, NestJS, ASP.NET Core and React Native serving 3,000+ users. The
-            standards we hold our clients&apos; systems to are the ones we run our own on.
+            GearON.ai is my own SaaS product, engineered the same way I build for clients - a microservice
+            platform on Next.js, NestJS, ASP.NET Core and React Native serving 3,000+ users. The standards I hold
+            client systems to are the ones I run my own on.
           </p>
           <Button href="https://gearon.ai" target="_blank" variant="secondary" className="px-4.5! py-2.5!">
             Visit GearON.ai ↗

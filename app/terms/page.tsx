@@ -23,9 +23,9 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "What this site is",
     body: (
       <>
-        This website is informational - it describes GearON Tech, part of GearON Group, and the work we do.
-        Nothing on it is a contractual offer. An actual engagement with us is governed by a separate, signed
-        services agreement or statement of work, not by this page.
+        This website is informational - it describes GearON Tech, an independent software practice, and the work
+        I do. Nothing on it is a contractual offer. An actual engagement with us is governed by a separate,
+        signed services agreement or statement of work, not by this page.
       </>
     ),
   },

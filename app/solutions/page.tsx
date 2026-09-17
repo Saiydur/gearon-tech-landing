@@ -18,10 +18,10 @@ export default function SolutionsPage() {
         <Reveal className="mx-auto max-w-[1560px] px-5 pt-11 pb-8 sm:px-8 sm:pt-16 sm:pb-10 lg:px-16 lg:pt-19 lg:pb-12">
           <div className="mb-6 font-mono text-[13px] text-accent-300">solutions</div>
           <h1 className="mb-6 -ml-[0.055em] max-w-[20ch] font-heading text-[36px] leading-[1.05] font-bold tracking-[-0.025em] sm:text-[52px] lg:text-[68px]">
-            What we build.
+            What I build.
           </h1>
           <p className="max-w-[58ch] text-[17px] leading-[1.65] text-text/82">
-            Thirteen categories our teams ship into production, from a single storefront to the platform an
+            Thirteen categories I ship into production, from a single storefront to the platform an
             enterprise runs on. Each one links to the case study that proves it.
           </p>
         </Reveal>

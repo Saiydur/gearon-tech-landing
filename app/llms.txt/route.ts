@@ -12,7 +12,7 @@ export async function GET() {
   lines.push("# GearON Tech");
   lines.push("");
   lines.push(
-    "> Software development agency building custom web and mobile apps, enterprise software and ERP, AI-powered solutions, and dedicated development teams. Twelve-person hybrid team based in Dhaka, Bangladesh, founded 2025, part of GearON Group.",
+    "> Independent software practice building custom web and mobile apps, enterprise software and ERP, AI-powered solutions, and dedicated engineering support. Founder-led, based in Dhaka, Bangladesh, founded 2025.",
   );
   lines.push("");
 

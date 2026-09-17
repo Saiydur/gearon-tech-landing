@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Work - GearON Tech",
   description:
-    "Ten builds across automotive, real estate, field services, education, travel and sales tooling, plus our own group product.",
+    "Ten builds across automotive, real estate, field services, education, travel and sales tooling, plus my own product.",
   path: "/work",
 });
 
@@ -21,7 +21,7 @@ export default function WorkPage() {
           </h1>
           <p className="max-w-[58ch] text-[17px] leading-[1.65] text-text/82">
             Ten builds across automotive, real estate, field services, education, travel and sales tooling, plus
-            our own group product. Filter by sector, service or stack.
+            my own product. Filter by sector, service or stack.
           </p>
         </Reveal>
       </section>
