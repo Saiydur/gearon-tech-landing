@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import Reveal from "@/components/Reveal";
+import ProjectImage from "@/components/ProjectImage";
 import { PROJECTS } from "@/lib/data";
 import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
@@ -66,6 +67,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       <section className="border-b-2 border-divider">
+        <Reveal className="mx-auto max-w-[1560px] px-5 py-7 sm:px-8 lg:px-16">
+          <ProjectImage
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            className="aspect-[16/9] w-full rounded-lg"
+          />
+        </Reveal>
+      </section>
+
+      <section className="border-b-2 border-divider">
         <div className="mx-auto flex max-w-[1560px] flex-wrap">
           <Reveal className="min-w-0 flex-[1_1_360px] border-r-2 border-divider px-5 py-9 sm:px-8 sm:py-12 lg:px-16 lg:py-14">
             <div className="mb-1.5 font-mono text-[13px] text-text/60">client</div>
@@ -85,6 +96,29 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </div>
             <div className="text-[15px] leading-[1.5] text-text/70">{project.metricLabel}</div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b-2 border-divider">
+        <div className="mx-auto max-w-[1560px] px-5 py-9 sm:px-8 sm:py-12 lg:px-16 lg:py-14">
+          <div className="mb-5 font-mono text-[13px] text-text/60">screenshots</div>
+          {project.gallery && project.gallery.length > 0 ? (
+            <Reveal stagger={0.06} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {project.gallery.map((src, i) => (
+                <ProjectImage
+                  key={src}
+                  src={src}
+                  alt={`${project.name} screenshot ${i + 1}`}
+                  className="aspect-[16/10] w-full rounded-lg"
+                />
+              ))}
+            </Reveal>
+          ) : (
+            <ProjectImage
+              alt={`${project.name} screenshots coming soon`}
+              className="aspect-[16/6] w-full rounded-lg"
+            />
+          )}
         </div>
       </section>
 

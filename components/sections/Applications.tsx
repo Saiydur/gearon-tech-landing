@@ -7,10 +7,10 @@ export default function Applications() {
     <section id="applications" className="border-b-2 border-divider bg-surface">
       <div className="mx-auto max-w-[1560px] px-5 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-21">
         <h2 className="mb-3 font-heading text-[28px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[34px] lg:text-[40px]">
-          Applications we build
+          Applications I build
         </h2>
         <p className="mb-8.5 max-w-[64ch] text-[15.5px] leading-[1.65] text-text/78">
-          Categories our teams ship into production, from a single storefront to the platform an enterprise runs
+          Categories I ship into production, from a single storefront to the platform an enterprise runs
           on.
         </p>
         <Reveal

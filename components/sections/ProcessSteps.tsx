@@ -11,7 +11,7 @@ export default function ProcessSteps() {
             How we work
           </h2>
           <p className="max-w-[54ch] text-base leading-[1.6] text-text/78">
-            Five stages, one team, no handover cliff.
+            Five stages, one person, no handover cliff.
           </p>
         </div>
         <div className="relative">

@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Button from "@/components/ui/Button";
-import Tag from "@/components/ui/Tag";
 import Reveal from "@/components/Reveal";
+import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS } from "@/lib/data";
 
 export default function SelectedWork() {
@@ -24,31 +23,9 @@ export default function SelectedWork() {
           </Button>
         </div>
 
-        <Reveal stagger={0.08} className="border-t-2 border-divider">
+        <Reveal stagger={0.08} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {homeProjects.map((project) => (
-            <Link
-              key={project.name}
-              href={`/work/${project.slug}`}
-              className="group -mx-3 flex flex-wrap items-baseline gap-x-7 gap-y-4 border-b border-divider px-3 py-5.5 no-underline transition-colors hover:bg-surface/70"
-            >
-              <div className="min-w-0 flex-[2_1_260px]">
-                <div className="mb-1.5 font-heading text-[19px] leading-[1.2] font-bold tracking-[-0.01em] text-text group-hover:underline">
-                  {project.name}
-                </div>
-                <div className="text-[13px] leading-[1.4] text-text/62">{project.client}</div>
-              </div>
-              <div className="min-w-0 flex-[1_1_150px]">
-                <div className="font-heading text-[22px] leading-[1.1] font-bold text-accent">
-                  {project.metric}
-                </div>
-                <div className="mt-1 text-xs leading-[1.4] text-text/62">{project.metricLabel}</div>
-              </div>
-              <div className="flex min-w-0 flex-[2_1_240px] flex-wrap gap-1.5">
-                {project.stack.map((s) => (
-                  <Tag key={s}>{s}</Tag>
-                ))}
-              </div>
-            </Link>
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </Reveal>
       </div>

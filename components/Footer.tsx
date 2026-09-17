@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[1560px] flex-wrap items-center justify-between gap-6">
         <div className="flex flex-wrap items-center gap-2.5">
           <Image src={mark} alt="" height={20} className="h-5 w-auto" />
-          <span className="text-[13px] text-text/65">GearON Tech - part of GearON Group. © 2026</span>
+          <span className="text-[13px] text-text/65">GearON Tech - an independent software practice. © 2026</span>
         </div>
         <div className="flex flex-wrap gap-5 text-[13px]">
           {links.map((link) => (

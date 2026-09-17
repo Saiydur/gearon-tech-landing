@@ -31,7 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const title = "GearON Tech - Software that survives contact with your business.";
 const description =
-  "GearON Tech builds, ships and runs the systems startups and enterprises depend on - from a two-week discovery sprint to a dedicated squad that stays long after launch.";
+  "GearON Tech builds, ships and runs the systems startups and enterprises depend on - from a two-week discovery sprint to hands-on support that stays long after launch.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

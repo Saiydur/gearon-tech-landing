@@ -48,7 +48,7 @@ export default function HeroIntro() {
       </h1>
       <p data-hero-part className="mb-8 max-w-[56ch] text-[17px] leading-[1.65] text-text/78">
         GearON Tech builds, ships and runs the systems startups and enterprises depend on - from a two-week
-        discovery sprint to a dedicated squad that stays long after launch.
+        discovery sprint to hands-on support that stays long after launch.
       </p>
       <div data-hero-part className="mb-9 flex flex-wrap gap-3">
         <Button href="/#book" variant="primary">

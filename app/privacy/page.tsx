@@ -14,8 +14,8 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "What this covers",
     body: (
       <>
-        This policy covers <strong>tech.gearon.ai</strong>, the marketing website for GearON Tech, part of GearON
-        Group. It does not cover GearON.ai, our flagship SaaS product, which has its own privacy policy - or any
+        This policy covers <strong>tech.gearon.ai</strong>, the marketing website for GearON Tech, an independent
+        software practice. It does not cover GearON.ai, a separate product with its own privacy policy - or any
         client system we build and operate, which is governed by that client&apos;s own policies.
       </>
     ),

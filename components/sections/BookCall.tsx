@@ -30,7 +30,7 @@ export default function BookCall() {
               <div className="font-heading text-[19px] leading-[1.3] font-bold">Dhaka, Bangladesh - hybrid</div>
             </div>
             <div>
-              <div className="mb-1.5 font-mono text-[13px]">group</div>
+              <div className="mb-1.5 font-mono text-[13px]">product</div>
               <div className="font-heading text-[19px] leading-[1.3] font-bold">gearon.ai</div>
             </div>
           </div>

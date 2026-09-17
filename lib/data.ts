@@ -18,20 +18,25 @@ export type Project = {
   arch: string;
   stack: string[];
   home: boolean;
+  // Cover image and extra screenshots, e.g. "/projects/<slug>/cover.png".
+  // Drop files into public/projects/<slug>/ and set these to show real
+  // screenshots - components fall back to a placeholder while unset.
+  image?: string;
+  gallery?: string[];
 };
 
 export const PROJECTS: Project[] = [
   {
     slug: "gearon-ai",
     name: "GearON.ai",
-    client: "GearON Group - flagship SaaS product",
+    client: "Own product - SaaS platform",
     sector: "SaaS",
     service: "SaaS platform",
     metric: "3,000+",
     metricLabel: "users on the platform",
     status: "Live",
     summary:
-      "The group's own product, engineered in-house: web, mobile and service layers on one queue-driven platform.",
+      "My own product, engineered in-house: web, mobile and service layers on one queue-driven platform.",
     arch: "Microservice architecture",
     stack: ["Next.js", "NestJS", "ASP.NET Core", "React Native", "PostgreSQL", "MongoDB", "Redis"],
     home: true,
@@ -187,8 +192,8 @@ export const SERVICES = [
   },
   {
     code: "TEAM",
-    title: "Dedicated development teams",
-    copy: "A named squad - engineers, QA, DevOps - in your standups and your repo, billed monthly, scaled up or down as scope moves.",
+    title: "Dedicated engineering support",
+    copy: "Direct access to me, working only on your product, in your standups and your repo - billed monthly, scaled up or down as scope moves.",
   },
   {
     code: "ARCH",
@@ -311,7 +316,7 @@ export const STEPS = [
   { n: "02", title: "Discovery sprint", copy: "Two weeks to scope, architecture, risks and a number you can budget against." },
   { n: "03", title: "Design & build", copy: "UI/UX, then weekly increments with QA and CI from the first commit." },
   { n: "04", title: "Deploy", copy: "Cloud infrastructure, pipelines, monitoring and a rollout that does not stop your operation." },
-  { n: "05", title: "Operate & scale", copy: "Maintenance, integrations and the squad that already knows the codebase." },
+  { n: "05", title: "Operate & scale", copy: "Maintenance, integrations and the person who already knows the codebase." },
 ];
 
 export const OFFERS = [
@@ -323,8 +328,8 @@ export const OFFERS = [
   },
   {
     tag: "Monthly",
-    title: "Dedicated squad",
-    copy: "Named engineers, QA and DevOps working only on your product, reporting into your process.",
+    title: "Dedicated engineering",
+    copy: "Direct access to me, working only on your product, reporting into your process.",
     terms: "Rolling · scale up or down",
   },
   {
@@ -358,9 +363,9 @@ export const FAQS = [
       "Both. Product rescue exists specifically for a stalled or half-built product - we audit it first, then move it back into weekly delivery.",
   },
   {
-    question: "What does a dedicated development team look like?",
+    question: "What does dedicated engineering support look like?",
     answer:
-      "Named engineers, QA and DevOps working only on your product, in your standups and your repo, billed monthly and scaled up or down as scope moves - not a rotating pool of contractors.",
+      "Direct access to me, working only on your product, in your standups and your repo, billed monthly and scaled up or down as scope moves - not a rotating pool of contractors.",
   },
   {
     question: "What's your tech stack?",
@@ -368,9 +373,9 @@ export const FAQS = [
       "Mainly Next.js and NestJS on the web and service layer, plus ASP.NET Core, React Native, PostgreSQL, MongoDB and Redis depending on the system. The exact stack is listed on every case study on the work page.",
   },
   {
-    question: "Where is the team based?",
+    question: "Who will actually build this?",
     answer:
-      "A twelve-person hybrid team out of Dhaka, Bangladesh, working across BD and overseas time zones - small enough that you know who writes your code, senior enough that you don't have to check.",
+      "Me, directly - based in Dhaka, Bangladesh, working across BD and overseas time zones. No account manager relaying to a team you never meet; you talk to the person writing the code.",
   },
   {
     question: "How do I start?",
@@ -382,7 +387,7 @@ export const FAQS = [
 export const STATS = [
   { value: 15, suffix: "+", label: "projects delivered" },
   { value: 6, suffix: "", label: "clients, four in BD" },
-  { value: 12, suffix: "", label: "engineers, hybrid" },
+  { value: 1, suffix: "", label: "founder, full-stack" },
 ];
 
 export const CALENDAR_DAYS = Array.from({ length: 21 }, (_, i) => i + 1);

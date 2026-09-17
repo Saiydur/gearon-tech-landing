@@ -5,44 +5,24 @@ import { gsap } from "gsap";
 
 type Node = { id: number; cx: number; cy: number; r: number; tag?: string };
 
-// A loose, hand-placed cluster rather than a perfect grid - twelve nodes of
-// varied weight standing in for a hybrid team of engineers, designers, QA
-// and DevOps (the disciplines already named in the copy beside this), wired
-// together like a schematic instead of laid out as uniform placeholder tiles.
+// A hub-and-spoke schematic, not a mesh: one founder (the center node) wired
+// directly to each discipline they cover, rather than a network standing in
+// for a multi-person team.
 const NODES: Node[] = [
-  { id: 1, cx: 55, cy: 68, r: 15, tag: "ENG" },
-  { id: 2, cx: 128, cy: 36, r: 9 },
-  { id: 3, cx: 200, cy: 70, r: 17, tag: "UX" },
-  { id: 4, cx: 264, cy: 40, r: 9 },
-  { id: 5, cx: 330, cy: 78, r: 13 },
-  { id: 6, cx: 88, cy: 140, r: 10 },
-  { id: 7, cx: 168, cy: 152, r: 18, tag: "QA" },
-  { id: 8, cx: 238, cy: 134, r: 9 },
-  { id: 9, cx: 304, cy: 158, r: 14 },
-  { id: 10, cx: 54, cy: 216, r: 9 },
-  { id: 11, cx: 152, cy: 226, r: 16, tag: "OPS" },
-  { id: 12, cx: 262, cy: 214, r: 11 },
+  { id: 0, cx: 180, cy: 130, r: 22 },
+  { id: 1, cx: 180, cy: 35, r: 13, tag: "ENG" },
+  { id: 2, cx: 270, cy: 101, r: 13, tag: "AI" },
+  { id: 3, cx: 236, cy: 207, r: 13, tag: "DEVOPS" },
+  { id: 4, cx: 124, cy: 207, r: 13, tag: "QA" },
+  { id: 5, cx: 90, cy: 101, r: 13, tag: "UX" },
 ];
 
 const EDGES: [number, number][] = [
-  [1, 2],
-  [2, 3],
-  [3, 4],
-  [4, 5],
-  [1, 6],
-  [2, 7],
-  [3, 7],
-  [4, 8],
-  [5, 9],
-  [6, 7],
-  [7, 8],
-  [8, 9],
-  [6, 10],
-  [7, 11],
-  [8, 11],
-  [9, 12],
-  [10, 11],
-  [11, 12],
+  [0, 1],
+  [0, 2],
+  [0, 3],
+  [0, 4],
+  [0, 5],
 ];
 
 export default function TeamNetwork() {
@@ -81,7 +61,7 @@ export default function TeamNetwork() {
       viewBox="0 0 360 260"
       className="h-auto w-full max-w-[380px]"
       role="img"
-      aria-label="Schematic of the twelve-person team as a connected network of engineering, UX, QA and DevOps roles"
+      aria-label="Schematic of one founder as a central hub connected to the engineering, AI, DevOps, QA and UX roles they cover"
     >
       {EDGES.map(([a, b], i) => {
         const na = NODES.find((n) => n.id === a)!;
